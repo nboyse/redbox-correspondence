@@ -149,7 +149,7 @@ def generate_docx(request):
             content_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
         )
         response["Content-Disposition"] = f"attachment; filename=draft-{message_id}.docx"
-        return response
+        return response  # NOQA: TRY300
 
-    except Exception as e:
+    except Exception as e:  # NOQA: BLE001
         return HttpResponse(status=500, content=str(e))
