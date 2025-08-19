@@ -114,7 +114,6 @@ class ChatWindow(View):
     def get(self, request: HttpRequest, active_chat_id: uuid.UUID) -> HttpResponse:
         return chat_service.render_chat_window(request, active_chat_id)
 
-
 @csrf_exempt
 @require_POST
 def generate_docx(request):
